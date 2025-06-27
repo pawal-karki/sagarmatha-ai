@@ -1,13 +1,15 @@
-import { Button } from "@/components/ui/button";
-import prisma from "@/lib/dbConnection";
+"use client";
+import { useTRPC } from "@/trpc/client";
+import { useQuery } from "@tanstack/react-query";
 
-const Home = async () => {
-  const users = await prisma.user.findMany();
+const Page = () => {
+  const trpc = useTRPC();
+  const { data } = useQuery(trpc.sagarmathaAPI.queryOptions({ text: "world" }));
   return (
     <div className="flex flex-col items-center justify-center h-screen">
-      {JSON.stringify(users)}
+      {JSON.stringify(data)}
     </div>
   );
 };
 
-export default Home;
+export default Page;
