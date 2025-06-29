@@ -3,9 +3,9 @@ import { Agent, gemini, createAgent } from "@inngest/agent-kit";
 import { Sandbox } from "@e2b/code-interpreter";
 import { getSandbox } from "./util";
 
-export const helloWorld = inngest.createFunction(
-  { id: "hello-world" },
-  { event: "test/hello.world" },
+export const sagarmathaAI = inngest.createFunction(
+  { id: "sagarmatha-ai" },
+  { event: "api/sagarmatha.ai" },
   async ({ event, step }) => {
     const sandboxId = await step.run("get-sandbox-id", async () => {
       const sandbox = await Sandbox.create("sagarmatha-nextjs-test");
