@@ -2,6 +2,7 @@ import { inngest } from "./client";
 import {
   Agent,
   gemini,
+  grok,
   openai,
   createAgent,
   createTool,
@@ -13,7 +14,6 @@ import { Sandbox } from "@e2b/code-interpreter";
 import { z } from "zod";
 import { PROMPT } from "./prompt";
 import { getSandbox, lastAssistantResponse } from "./util";
-import { grok } from "inngest";
 import { prisma } from "@/lib/dbConnection";
 
 interface AgentState {
