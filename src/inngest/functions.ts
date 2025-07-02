@@ -166,7 +166,7 @@ export const sagarmathaAI = inngest.createFunction(
       },
     });
 
-    const result = await network.run(event.data.value);
+    const result = await network.run(event.data);
 
     const isError =
       !result.state.data.summary ||
@@ -182,6 +182,7 @@ export const sagarmathaAI = inngest.createFunction(
       if (isError) {
         return await prisma.message.create({
           data: {
+            projectId: event.data.projectId,
             content: "Something went Wrong Error Occured",
             role: "ASSISTANT",
             type: "ERROR",
@@ -190,6 +191,7 @@ export const sagarmathaAI = inngest.createFunction(
       }
       return await prisma.message.create({
         data: {
+          projectId: event.data.projectId,
           content: result.state.data.summary,
           role: "ASSISTANT",
           type: "RESULT",
