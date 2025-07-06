@@ -36,10 +36,12 @@ export const sagarmathaAI = inngest.createFunction(
         "A helpful assistant for building and debugging modern Next.js applications.",
       system: PROMPT,
       model: openai({
-        model: "gpt-4o",
+        model: "gpt-3.5-turbo",
+
         defaultParameters: {
           temperature: 0.1,
         },
+        baseUrl: "https://api.chatanywhere.tech/v1",
       }),
 
       tools: [
