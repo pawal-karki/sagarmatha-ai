@@ -41,7 +41,7 @@ export const sagarmathaAI = inngest.createFunction(
         defaultParameters: {
           temperature: 0.1,
         },
-        baseUrl: "https://api.chatanywhere.tech/v1",
+      
       }),
 
       tools: [
