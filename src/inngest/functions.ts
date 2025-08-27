@@ -35,12 +35,11 @@ export const sagarmathaAI = inngest.createFunction(
       description:
         "A helpful assistant for building and debugging modern Next.js applications.",
       system: PROMPT,
-      model: openai({
-        model: "gpt-4o-mini",
-
-        defaultParameters: {
-          temperature: 0.1,
-        },
+      model: gemini({
+        model: "gemini-2.0-flash-exp",
+        // defaultParameters: {
+        //   temperature: 0.1,
+        // },
       }),
 
       tools: [
@@ -138,7 +137,7 @@ export const sagarmathaAI = inngest.createFunction(
           },
         }),
       ],
-      //lifecycle
+      //if the last message of the agent contains the tasksummary keyword it will return the message
       lifecycle: {
         onResponse: async ({ result, network }) => {
           const lastAssistantMessageText = lastAssistantResponse(result);
