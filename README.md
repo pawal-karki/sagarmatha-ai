@@ -138,17 +138,6 @@ The agent uses E2B to create a sandbox named `sagarmatha-nextjs-test`. Ensure yo
 - Do not import `cn` from UI utilities; use `src/lib/utils.ts`.
 - The agent prompt contains strict guidelines (e.g., use Tailwind classes only) that apply to code generated inside the sandbox, not necessarily to this app.
 
-## Scripts
-
-```json
-{
-  "dev": "next dev --turbopack",
-  "build": "next build",
-  "start": "next start",
-  "lint": "next lint"
-}
-```
-
 ## Project Structure
 
 - `src/app/*`: Next.js App Router pages, layouts, and API routes
