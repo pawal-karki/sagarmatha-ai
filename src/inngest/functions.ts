@@ -36,9 +36,15 @@ export const sagarmathaAI = inngest.createFunction(
         "A helpful assistant for building and debugging modern Next.js applications.",
       system: PROMPT,
       model: gemini({
-        model: "gemini-2.0-flash-exp",
+        model: "gemini-2.0-flash",
         // defaultParameters: {
         //   temperature: 0.1,
+        //   maxOutputTokens: 1000,
+        //   topP: 0.95,
+        //   topK: 40,
+        //   presencePenalty: 0.0,
+        //   frequencyPenalty: 0.0,
+        //   responseMimeType: "text/plain",
         // },
       }),
 
