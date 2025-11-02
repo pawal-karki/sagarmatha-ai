@@ -37,15 +37,15 @@ export const sagarmathaAI = inngest.createFunction(
       system: PROMPT,
       model: gemini({
         model: "gemini-2.0-flash",
-        // defaultParameters: {
-        //   temperature: 0.1,
-        //   maxOutputTokens: 1000,
-        //   topP: 0.95,
-        //   topK: 40,
-        //   presencePenalty: 0.0,
-        //   frequencyPenalty: 0.0,
-        //   responseMimeType: "text/plain",
-        // },
+        defaultParameters: {
+          temperature: 0.1,
+          maxOutputTokens: 1000,
+          topP: 0.95,
+          topK: 40,
+          presencePenalty: 0.0,
+          frequencyPenalty: 0.0,
+          responseMimeType: "text/plain",
+        },
       }),
 
       tools: [
